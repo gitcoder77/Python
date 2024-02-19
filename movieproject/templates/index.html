@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<style>
+    .card {
+        height: 500px; /* Set a larger fixed height for the card */
+        margin: 10px; /* Add margin for spacing */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .card-body {
+        overflow: hidden; /* Hide any overflow content */
+    }
+
+    .card-text {
+        max-height: 4.5em; /* Set a maximum height for the description (4-6 lines) */
+        overflow: hidden; /* Hide overflow content */
+        text-overflow: ellipsis; /* Display an ellipsis (...) to indicate more content */
+        white-space: normal; /* Allow text to wrap */
+    }
+
+    .card-footer {
+        padding: 1px; /* Add padding for the footer (button) */
+    }
+     .center-container  {
+        position: absolute; /* Position absolute for centering */
+        top: 50%; /* Move the button to the center vertically */
+
+</style>
+
+<div class="container">
+    <div class="row">
+        {% for i in movie_list %}
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="{{i.img.url}}" class="card-img-top" alt="..." width="100px" height="300">
+                    <div class="card-body">
+                        <h5 class="card-title">{{i.name}}</h5>
+                        <p class="card-text">{{i.desc}}</p>
+                        <a href="{% url 'movieapp:detail' i.id %}" class="btn btn-primary">More details</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+                </div>
+
+    </div>
+    </div>
+</div>
+
+{% endblock %}
+
