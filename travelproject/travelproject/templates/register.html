@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <style>
+        body {
+            background-color: #3498db;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .registration-box {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .registration-form input {
+            width: 100%;
+            padding: 100px;
+            margin: 18px 0;
+            box-sizing:80px border-box;100px
+        }
+
+        .registration-form button {
+            background-color: #2ecc71;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="registration-box">
+<h2>Registration</h2>
+<form action="register" method="post">
+    {% csrf_token %}
+    <label>User name:</label><br>
+    <input type="text" name="username" size="30" style="height: 30px;"><br>
+    <label>First name:</label><br>
+    <input type="text" name="first_name" size="30" style="height: 30px;"><br>
+    <label>Last name:</label><br>
+    <input type="text" name="last_name" size="30" style="height: 30px;"><br>
+    <label>Email:</label><br>
+    <input type="email" name="email" size="30" style="height: 30px;"><br>
+    <label>Password:</label><br>
+    <input type="password" name="password" size="30" style="height: 30px;"><br>
+    <label> Conform Password:</label><br>
+
+    <input type="password" name="password1" size="30" style="height: 30px;"><br>
+    <input type="submit" size="30" style="height: 30px;">
+</form>
+    </div>
+{% for msg in messages %}
+<h4>{{msg}}</h4>
+{% endfor %}
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        body {
+            background-color: #3498db; /* Blue background color */
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .registration-box {
+            background-color: rgba(255, 255, 255, 0.7); /* Transparent white background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .registration-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        .registration-form button {
+            background-color: #2ecc71; /* Green button color */
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="registration-box">
+    <h2>Login Form</h2>
+    <form action="login" method="post">
+        {% csrf_token %}
+        <label for="username">Username :</label><br>
+        <input type="text" id="username" name="username" required size="30" style="height: 30px;"><br>
+
+
+        <label for="password">Password :</label><br>
+        <input type="password" id="password" name="password" required size="30" style="height: 30px;"><br>
+
+        <input type="submit">
+    </form>
+</div>
+
+</body>
+</html>
